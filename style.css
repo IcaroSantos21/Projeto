@@ -36,7 +36,7 @@ body {
   */
   /* background: imagem, repetição, posição / tamanho */
   background: var(--bg-url) no-repeat top center / cover;
-  height: 100vh;
+  height: 100vh; /* Altura total da viewport */
 }
 
 /* FONTE GLOBAL - Aplica fonte a todos elementos */
@@ -45,10 +45,10 @@ body * {
   color: var(--text-color);
 }
 
-/* CONTAINER PRINCIPAL - Centralização horizontal */
+/* CONTAINER PRINCIPAL - Layout responsivo */
 #container {
-  width: 100%;
-  max-width: 588px;
+  width: 100%; /* Largura total disponível */
+  max-width: 588px; /* Largura máxima para telas grandes */
   margin: 56px auto 0px; /* margin: top auto(centraliza) bottom */
   padding: 0px 24px;
 }
@@ -83,7 +83,7 @@ body * {
   margin: 0 auto; /* Centraliza horizontalmente */
 }
 
-/* BOTÃO DO SWITCH - Posicionamento absoluto */
+/* BOTÃO DO SWITCH - Posicionamento e animação */
 #switch button {
   width: 32px;
   height: 32px;
@@ -92,18 +92,20 @@ body * {
   border-radius: 50%;
   position: absolute;
   top: 50%;
-  left: 0;
+  left: 0; /* Posição inicial à esquerda */
   z-index: 1;
   transform: translateY(-50%); /* Centraliza verticalmente */
-  animation: slide-back 0.4s;
+  animation: slide-back 0.4s; /* Animação de retorno */
 }
 
+/* ANIMAÇÃO DO BOTÃO - Tema claro */
 .light #switch button {
-  animation: slide-in 0.4s forwards;
+  animation: slide-in 0.4s forwards; /* Move botão para direita */
 }
 
+/* HOVER DO BOTÃO - Efeito de destaque */
 #switch button:hover {
-  outline: 8px solid var(--highlight-color);
+  outline: 8px solid var(--highlight-color); /* Contorno ao passar mouse */
 }
 
 /* FUNDO DO SWITCH - Display block */
@@ -188,32 +190,34 @@ footer {
   font-size: 14px;
 }
 
-/* ===== MEDIA QUERIES ===== */
-
+/* ===== RESPONSIVIDADE ===== */
+/* MEDIA QUERY - Telas grandes (desktop) */
 @media (min-width: 700px) {
   :root {
-    --bg-url: url(./assets/bg-desktop.jpg);
+    --bg-url: url(./assets/bg-desktop.jpg); /* Background desktop escuro */
   }
   .light {
-    --bg-url: url(./assets/bg-desktop-light.jpg);
+    --bg-url: url(./assets/bg-desktop-light.jpg); /* Background desktop claro */
   }
 }
 
-/* animations */
+/* ===== ANIMAÇÕES ===== */
+/* ANIMAÇÃO - Deslizar para direita (tema claro) */
 @keyframes slide-in {
   from {
-    left: 0;
+    left: 0; /* Posição inicial */
   }
   to {
-    left: 50%;
+    left: 50%; /* Posição final */
   }
 }
 
+/* ANIMAÇÃO - Deslizar para esquerda (tema escuro) */
 @keyframes slide-back {
   from {
-    left: 50%;
+    left: 50%; /* Posição inicial */
   }
   to {
-    left: 0;
+    left: 0; /* Posição final */
   }
 }
