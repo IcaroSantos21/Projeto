@@ -1,0 +1,184 @@
+/* RESET GLOBAL - Remove margens e paddings padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Inclui border e padding no tamanho total */
+}
+
+/* VARIÁVEIS CSS - Tema escuro */
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.1);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+/* VARIÁVEIS CSS - Tema claro */
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+/* BACKGROUND DO BODY - Imagem de fundo */
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  */
+  /* background: imagem, repetição, posição / tamanho */
+  background: var(--bg-url) no-repeat top center / cover;
+}
+
+/* FONTE GLOBAL - Aplica fonte a todos elementos */
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+/* CONTAINER PRINCIPAL - Centralização horizontal */
+#container {
+  width: 360px;
+  margin: 56px auto 0px; /* margin: top auto(centraliza) bottom */
+  padding: 0px 24px;
+}
+/* ===== SEÇÃO PROFILE ===== */
+/* ALINHAMENTO DE TEXTO - Centraliza todo conteúdo */
+#profile {
+  text-align: center; /* Centraliza texto e elementos inline */
+  padding: 24px;
+}
+
+/* ALINHAMENTO DE IMAGEM - Centralização */
+#profile img {
+  display: block; /* Transforma em elemento de bloco */
+  width: 112px;
+  margin: auto; /* Centraliza horizontalmente */
+}
+
+/* TEXTO DO PROFILE - Espaçamento */
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+  margin-left: 9.5px;
+  margin-right: 9.5px;
+}
+
+/* ===== SEÇÃO SWITCH ===== */
+/* CENTRALIZAÇÃO - Usando margin auto */
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* BOTÃO DO SWITCH - Posicionamento absoluto */
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%); /* Centraliza verticalmente */
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+/* FUNDO DO SWITCH - Display block */
+#switch span{
+  display: block; /* Elemento de bloco */
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+ 
+
+/* ===== SEÇÃO LINKS ===== */
+/* DISPLAY FLEX - Layout em coluna */
+ul {
+  list-style: none;
+  display: flex; /* Layout flexível */
+  flex-direction: column; /* Organiza em coluna vertical */
+  gap: 16px; /* Espaço entre itens */
+  padding: 24px 0px;
+}
+
+/* LINKS - Flexbox para centralização */
+ul li a {
+  display: flex; /* Layout flexível */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  text-decoration: none;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  transition: background 0.2s;
+}
+
+/* HOVER DOS LINKS - Efeito ao passar mouse */
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/* ===== SEÇÃO SOCIAL LINKS ===== */
+/* DISPLAY FLEX - Centralização horizontal */
+#social-links {
+  display: flex; /* Layout flexível */
+  padding: 24px 0px;
+  font-size: 24px;
+  justify-content: center; /* Centraliza horizontalmente */
+}
+
+/* ÍCONES SOCIAIS - Flexbox para centralização */
+#social-links a {
+  display: flex; /* Layout flexível */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+
+
+/* HOVER DOS ÍCONES SOCIAIS */
+#social-links a:hover {
+  background: var(--highlight-color);
+  padding: 16px;
+  border-radius: 50%;
+}
+
+/* ===== FOOTER ===== */
+/* ALINHAMENTO DE TEXTO - Centralização */
+footer {
+  padding: 24px 0px;
+  text-align: center; /* Centraliza o texto */
+  font-size: 14px;
+}
+
